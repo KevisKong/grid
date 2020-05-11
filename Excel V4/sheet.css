@@ -1,0 +1,146 @@
+
+.sheet{
+    overflow-y: scroll;
+    overflow-x: scroll;
+    /* height: 900px;
+    width: 1800px; */
+}
+.header{
+    display: inline-flex;
+    height: 24px;
+}
+.corner{
+    height: 24px;
+    width: 24px;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    margin-left: 5px;
+    background-color: #ddd;
+    text-align: center;
+}
+.columnHeader{
+    height: 24px;
+    width: calc(100% - 24px);
+}
+.rowHeader{
+    width: 24px;
+    height: calc( 80% - 120px);
+    margin-left: 5px;
+}
+.table{
+    width: calc(100% - 24px);
+    height: calc(80% - 120px);
+}
+.wrapper{
+    display: flex;
+    margin-top: -4px;
+}
+.tableRow{
+    height: 24px;
+    margin-top: 0;
+    display: inline-flex;
+}
+.columnHeaderTable{
+    display: flex;
+}
+.rowHeaderCell{
+    height: 24px;
+    width: 24px;
+    background-color: #ddd;
+    border-color: rgb(0, 0, 0);
+    border-width: 0 0.5px 0.5px 0.5px;
+    border-style: solid;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    user-select: none;
+}
+.columnHeaderCell{
+    height: 24px;
+    width: 64px;
+    background-color: #ddd;
+    border: 0.5px  solid #888;
+    border-width: 0.5px 0.5px 0.5px 0;
+    text-align: center;
+    font-size: 15px;
+    box-sizing: border-box;
+    user-select: none;
+    position: relative;
+}
+.columnHeaderCell:hover,.rowHeaderCell:hover{
+    background-color: #22a566;
+}
+.tableCell{
+    height: 100%;
+    width: 64px;
+    box-sizing: border-box;
+    border-width: 0 0.5px 0.5px 0;
+    border-style: solid;
+    border-color: #888;
+    text-align: center;
+    user-select: none;
+    background-color:#f8f8f8 ;
+}
+.columnChild{
+    height: 100%;
+    width: 10px;
+    float: right;
+    cursor: col-resize;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.rowChild{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    cursor: row-resize;
+}
+#item-list {
+    width: 0; 
+    height: 125px;
+    overflow: hidden; 
+    box-shadow: 0 1px 1px #888, 1px 0 1px #ccc;
+    position: absolute; 
+}
+
+.item {
+    width: 130px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.rightMenu{
+    width: 100px;
+    border: 1px solid #ccc;
+    position: absolute;
+    box-shadow:  0 0 5px rgb(185, 255, 243);
+    padding: 0px 0;
+    transition: all 0.1s ease;
+    display: none;
+    height: auto;
+}
+.rightMenu li{
+    list-style: none;
+    width: 100%;
+    border:solid #e8e8e8;
+    border-width: 0 0.5px;
+    background-color: #57f6f8;
+    user-select: none;
+}
+.rightMenu li:hover{
+    background-color: #0cc;
+}
+.rightMenu li:active{
+    background-color: #088;
+}
+.tableCell{
+    display: inline-flex;
+}
+
+.tableBody{
+    display: grid;
+}
+
