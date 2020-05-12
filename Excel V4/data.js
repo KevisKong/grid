@@ -13,30 +13,51 @@ class Status {
     }
     static isInclude(id) {
         let index = this.sheetId.indexOf(id);
-        if (index == -1) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        return (index==-1);
     }
 }
 //创建sheet的格式模板，设有默认值。同时可以更改
 class SheetStyleOptions {
-    constructor(cellSize = [72, 20], sheetSize = [100, 10], extraFunction = [1, 1, 1]) {
-        this.sheetSize = {
-            rowNum:sheetSize[0],
-            columnNum:sheetSize[1]
+    constructor(cellSize, sheetSize, extraFunction) {
+        if(sheetSize){//这个是否可以判断传入结果为undefined吗
+            this.sheetSize = {
+                rowNum:sheetSize.rowNum,
+                columnNum:sheetSize.columnNum
+            }
         }
-        this.cellSize={
-            width:cellSize[0],
-            height:cellSize[1],
+        else{
+            this.sheetSize={
+                rowNum:100,
+                columnNum:10
+            }
         }
-        this.extraFunction = {
-            editability: Boolean(extraFunction[0]),
-            resize: Boolean(extraFunction[1]),
-            isIncludeTitle: Boolean(extraFunction[2])
+        if(cellSize){
+            this.cellSize={
+                width:cellSize[0],
+                height:cellSize[1],
+            }
         }
+        else{
+            this.cellSize={
+                width:72,
+                height:20
+            }
+        }
+        if(extraFunction){
+            this.extraFunction = {
+                editability: extraFunction.editability,
+                resize: extraFunction.resize,
+                isIncludeTitle: extraFunction.isIncludeTitle
+            }
+            else{
+                this.extraFunction={
+                    editability:true,
+                    resize:true,
+                    isIncludeTitle:true
+                }
+            }
+        }
+        
     }
     changeCellSize(width, height) {
         this.cellSize.width = width + "px";

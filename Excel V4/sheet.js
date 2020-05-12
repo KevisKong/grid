@@ -216,7 +216,7 @@ class Sheet {
         input.value = content;
         target.innerHTML = "";
         target.appendChild(input);
-        input.focus;
+        input.focus();
         document.body.addEventListener("click", judge);
         function judge(event) {
             if (event.target.id != "input" && Status.editability === true) {
