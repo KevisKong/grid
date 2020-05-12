@@ -7,3 +7,4 @@ window.onload=function(){
     new Sheet(div,"s",style);
     //是否需要增加一个实例的obj，方便后边寻找调用
 }
+// eqweqwerr
